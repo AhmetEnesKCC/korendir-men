@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benim Web Sitem</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Poppins fontu eklendi -->
+    <!-- CSS dosyası eklendi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- OrbitControls kütüphanesini kaldırdık -->
+  </head>
+  <body>
+    <div class="hero" style="background-image: url('download.webp')">
+      <div class="hero-content">
+        <div class="spider-web" id="spider-web">
+          <svg
+            width="200"
+            height="200"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="100"
+              cy="100"
+              r="90"
+              stroke="white"
+              stroke-width="2"
+              fill="none"
+            />
+            <circle
+              cx="100"
+              cy="100"
+              r="70"
+              stroke="white"
+              stroke-width="2"
+              fill="none"
+            />
+            <circle
+              cx="100"
+              cy="100"
+              r="50"
+              stroke="white"
+              stroke-width="2"
+              fill="none"
+            />
+            <circle
+              cx="100"
+              cy="100"
+              r="30"
+              stroke="white"
+              stroke-width="2"
+              fill="none"
+            />
+            <line
+              x1="100"
+              y1="0"
+              x2="100"
+              y2="200"
+              stroke="white"
+              stroke-width="2"
+            />
+            <line
+              x1="0"
+              y1="100"
+              x2="200"
+              y2="100"
+              stroke="white"
+              stroke-width="2"
+            />
+            <line
+              x1="100"
+              y1="100"
+              x2="200"
+              y2="0"
+              stroke="white"
+              stroke-width="2"
+            />
+            <line
+              x1="100"
+              y1="100"
+              x2="200"
+              y2="200"
+              stroke="white"
+              stroke-width="2"
+            />
+            <line
+              x1="100"
+              y1="100"
+              x2="0"
+              y2="0"
+              stroke="white"
+              stroke-width="2"
+            />
+            <line
+              x1="100"
+              y1="100"
+              x2="0"
+              y2="200"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <h1>Hoş Geldiniz</h1>
+        <p>Örümcek Adam'ın dünyasına adım atın!</p>
+      </div>
+    </div>
+
+    <!-- Range input eklendi -->
+    <div class="container">
+      <div class="range-paper">
+        <input type="range" id="scrollRange" min="0" max="300" value="0" />
+        <span id="rangeValue">0</span>
+        <!-- Değer göstergesi -->
+      </div>
+    </div>
+
+    <!-- 3D örümcek ağı modeli için alan eklendi -->
+    <div id="spiderWebContainer" style="width: 100%; height: 400px"></div>
+
+    <nav>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%; /* Genişlik tam olarak ayarlandı */
+        "
+      >
+        <div>
+          <svg height="40" width="140" xmlns="http://www.w3.org/2000/svg">
+            <!-- Yükseklik 140 olarak ayarlandı -->
+
+            <text
+              x="0"
+              y="30"
+              font-family="'Great Vibes', cursive"
+              font-size="24"
+              font-weight="bold"
+              fill="black"
+            >
+              korendir men
+            </text>
+          </svg>
+        </div>
+        <div class="nav-links" style="display: flex; gap: 10px">
+          <div class="dropdown">
+            <a href="#marka" class="nav-link">Marka</a>
+            <div class="dropdown-content">
+              <p>Label 1</p>
+              <p>Label 2</p>
+              <p>Label 3</p>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="#sorun" class="nav-link">Sorun</a>
+            <div class="dropdown-content">
+              <p>Label 1</p>
+              <p>Label 2</p>
+              <p>Label 3</p>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="#rutin" class="nav-link">Rutin</a>
+            <div class="dropdown-content">
+              <p>Label 1</p>
+              <p>Label 2</p>
+              <p>Label 3</p>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 15px">
+          <!-- margin-left: auto; eklendi -->
+          <a href="#kalp" id="kalp-icon">
+            <i class="far fa-heart" style="color: #f00"></i>
+          </a>
+          <a href="#profil"><i class="fas fa-user" style="color: black"></i></a>
+          <a href="#arama"
+            ><i class="fas fa-search" style="color: black"></i
+          ></a>
+          <a href="#sepet"
+            ><i class="fas fa-shopping-cart" style="color: black"></i
+          ></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- YouTube iframe eklendi -->
+    <div style="text-align: center; margin: 20px 0">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="Never Gonna Give You Up"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; 
+      encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <script src="scripts.js"></script>
+    <!-- JavaScript dosyası eklendi -->
+    <!-- Aşağıdaki içerikler silindi -->
+    <!-- <main> ... </main> -->
+    <!-- <footer> ... </footer> -->
+  </body>
+</html>
